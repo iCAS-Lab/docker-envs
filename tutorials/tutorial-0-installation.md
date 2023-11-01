@@ -174,4 +174,14 @@ If you run into any issue refer to the following documentation by Docker:
 
 https://docs.docker.com/engine/install/linux-postinstall/
 
+### Enable Docker on Computer Startup
+
+To enable Docker on startup use the typical `systemd` commands:
+
+```shell
+sudo systemctl enable docker.service
+sudo systemctl enable docker.socket
+sudo systemctl enable containerd.service
+```
+
 # [Continue to Tutorial 1](./tutorial-1-terminology.md)
