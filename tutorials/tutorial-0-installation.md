@@ -174,7 +174,7 @@ If you run into any issue refer to the following documentation by Docker:
 
 https://docs.docker.com/engine/install/linux-postinstall/
 
-### Enable Docker on Computer Startup
+### Enable Docker on Computer Startup (Optional)
 
 To enable Docker on startup use the typical `systemd` commands:
 
@@ -183,5 +183,19 @@ sudo systemctl enable docker.service
 sudo systemctl enable docker.socket
 sudo systemctl enable containerd.service
 ```
+
+If you do not choose to enable Docker at startup, you will need to run the following commands when you wish to use Docker:
+
+```shell
+sudo systemctl start docker.service
+sudo systemctl start docker.socket
+sudo systemctl start containerd.service
+```
+
+## Helpful Aliases
+
+Docker commands tend to be a bit on the lengthy side. For example, to list all of the containers you have to run `docker container ls -a`. You may want to consider creating some memorable aliases to map these commands to shorter ones. For example, a simple alias for the command above could be `dcls` or `dclsa`. This is the one I use!
+
+If you would like more examples of simple aliases for use with Docker take a look at my the aliases in my [.dotfiles](https://github.com/s7117/.dotfiles/blob/af98bd69236de6a70e5ac1f4765028214397b9f0/etc/zshrc_custom#L42) repo.
 
 # [Continue to Tutorial 1](./tutorial-1-terminology.md)
