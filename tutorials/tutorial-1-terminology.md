@@ -18,9 +18,19 @@ https://docs.docker.com/get-started/overview/
 
 Images are part of the core Docker functionality. You can use images that others have created or even create your own!
 
-For example, in the previous tutorial we ran the `hello-world` image using `docker run --rm hello-world`. The `hello-world` image was created by Docker and is simply running a `print/log` command or program to print the message we saw in the previous tutorial.
+For example, in the previous tutorial we ran the `hello-world` image using `docker run --rm hello-world`. The `hello-world` image was created by Docker and is simply running a `print/log` command or program to print the message we saw in the previous tutorial. Did you notice the following lines when we ran `docker run --rm hello-world`:
 
-So where can we find these images? [DockerHub!](https://hub.docker.com/) (there are more repositories for Docker images but we will mainly focus on DockerHub) Think of DockerHub as the GitHub of Docker images! DockerHub houses a TON of pre-built and ready to run applications, operating systems, and more! You need a PyTorch image? Here it is:
+```
+Unable to find image 'hello-world:latest' locally
+latest: Pulling from library/hello-world
+719385e32844: Pull complete
+Digest: sha256:88ec0acaa3ec199d3b7eaf73588f4518c25f9d34f58ce9a0df68429c5af48e8d
+Status: Downloaded newer image for hello-world:latest
+```
+
+The first thing we can interpret from this output is that, the `hello-world` image was not able to be found on our local computer. Due to this, Docker automatically goes out and tries to find the `hello-world` image online and then attempts to download it if it does find it. In this case the `hello-world` image was found and it is downloaded to our local computer.
+
+So where can we find these images? Where does Docker download the image from if it is found? [DockerHub!](https://hub.docker.com/) (there are more repositories for Docker images but we will mainly focus on DockerHub) Think of DockerHub as the GitHub of Docker images! DockerHub houses a TON of pre-built and ready to run applications, operating systems, and more! You need a PyTorch image? Here it is:
 
 https://hub.docker.com/search?q=pytorch
 
